@@ -91,7 +91,7 @@ export class ServerAdapter {
     const adapterHs = app.get(HttpAdapterHost);
     const fastifyInstance = (adapterHs.httpAdapter as FastifyAdapter).getInstance();
     fastifyInstance.addHook('onResponse', (request, reply, done) => {
-      console.log('befire sending response:');
+      console.log('before sending response:'); // DO something
       done();
     });
   }
