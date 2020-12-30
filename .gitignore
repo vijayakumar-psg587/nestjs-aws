@@ -34,3 +34,4 @@ lerna-debug.log*
 !.vscode/extensions.jsondownload/
 config/
 upload/
+nestjs-fastify-video-streaming.iml
