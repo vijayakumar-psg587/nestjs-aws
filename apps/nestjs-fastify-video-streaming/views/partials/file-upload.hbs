@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="card" style="width: 50vw;">
+                <div class="card-body">
+
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="largeFileIp"
+                               aria-describedby="largeFileIp" aria-label="Upload" style="display: none"
+                                onchange="onFileSeleted(event)">
+                        <label for="largeFileIp" class="file-input-label-class">Select to upload...</label>
+                        <span id="fileNameSpanId"></span>
+
+                    </div>
+                    <div class="button-wrapper">
+                        <a href="#" class="btn btn-primary" onclick="uploadFile(event)">Upload</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="row">
+        <div class="col-8">
+            <div class="card" style="width: 50vw;">
+                <div class="card-body">
+                    <h5 class="card-title">Upload a file</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Upload</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

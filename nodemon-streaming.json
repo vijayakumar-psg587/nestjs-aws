@@ -1,0 +1,11 @@
+{
+  "watch": ["apps/nestjs-fastify-video-streaming/src/config/**", "apps/nestjs-fastify-video-streaming/src/**"],
+  "exec": "ts-node apps/nestjs-fastify-video-streaming/src/main.ts",
+  "restartable": "rs",
+  "verbose": false,
+  "ignore": ["apps/nestjs-fastify-video-streaming/src/**/*.spec.ts","/node_modules/**", "apps/nestjs-fastify-video-streaming/test/**"],
+  "nodeArgs": [
+    {"NODE_ENV":"development"}
+  ],
+  "ext": "js,ts, jade, tsx, jsx, mjs"
+}

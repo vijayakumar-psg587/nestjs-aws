@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "allowjs": true,
+  "compilerOptions": {
+    "declaration": false,
+    "outDir": "../../dist/apps/nestjs-fastify-video-streaming"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "test", "**/*spec.ts"]
+}
