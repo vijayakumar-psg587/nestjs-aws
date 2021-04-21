@@ -6,4 +6,5 @@ export class AwsAppConfigModel {
   maxRedirects: number;
   contextPath: string;
   appVersion: string;
+  maxSockets?: number;
 }

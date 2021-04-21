@@ -18,19 +18,19 @@ export class AppConfigService {
   constructor() {}
 
   static getAppCommonConfig(): AppConfigModel {
+
     if (!this.configModel) {
       this.configModel = new AppConfigModel();
       if (process.env.APP_BODY_LIMIT) {
         this.configModel.body_limit = parseInt(process.env.APP_BODY_LIMIT);
       }
-
-      this.configModel.port = +process.env.APP_PORT;
-      this.configModel.host = process.env.APP_HOST;
-      this.configModel.version = process.env.APP_VERSION;
-      this.configModel.context_path = process.env.APP_CONTEXT_PATH;
+      this.configModel.port = +process.env.AWS_APP_PORT;
+      this.configModel.host = process.env.AWS_APP_HOST;
+      this.configModel.version = process.env.AWS_APP_VERSION;
+      this.configModel.context_path = process.env.AWS_APP_CONTEXT_PATH;
       this.configModel.node_env = process.env.NODE_ENV;
-      this.configModel.service_retry_count = +process.env.APP_SERVICE_RETRY_COUNT;
-      this.configModel.isEnableProxy = process.env.ENABLE_HTTPS_PROXY !== 'false';
+      this.configModel.service_retry_count = +process.env.AWS_APP_SERVICE_RETRY_COUNT;
+      this.configModel.isEnableProxy = process.env.AWS_ENABLE_HTTPS_PROXY !== 'false';
     }
     return this.configModel;
   }

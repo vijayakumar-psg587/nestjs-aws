@@ -16,6 +16,7 @@ export class AppConfigService {
       AppConfigService.appConfigModel.appVersion = process.env.AWS_APP_VERSION;
       AppConfigService.appConfigModel.timeout = +process.env.HTTP_TIMEOUT;
       AppConfigService.appConfigModel.maxRedirects = +process.env.HTTP_MAX_REDIRECTS;
+      AppConfigService.appConfigModel.maxSockets = +process.env.AWS_HTTP_MAX_SOCKETS;
     }
     return AppConfigService.appConfigModel;
   }

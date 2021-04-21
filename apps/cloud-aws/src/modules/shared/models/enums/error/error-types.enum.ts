@@ -1,6 +1,7 @@
 export enum ErrorTypes {
   REQ = 'request',
-  VALDIATION = 'validation',
+  VALIDATION = 'validation',
+  AWS = 'AWS',
   DB = 'database',
   CUSTOM = "{name:'custom', type: 12 }",
 }

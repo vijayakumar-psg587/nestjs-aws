@@ -20,7 +20,7 @@ export const API_AWS_CONST = {
   },
   COMMON: {
     APP_NAME: 'cloud-aws',
-    DEFAULT_DATE_TIME_FORMAT: 'YYYY-MM-DD HH:mm:ss.SSSS',
+    DEFAULT_DATE_TIME_FORMAT: 'yyyy-MM-dd HH:mm:ss.SSSS',
   },
   CORS: {
     HEADERS: [
@@ -34,5 +34,19 @@ export const API_AWS_CONST = {
     ALLOW_HEADERS: ['Content-type', 'Authorization', 'Origin', 'X-Forwaded-for', 'Referrer', 'Origin'],
     ALLOW_METHODS: ['GET', 'POST', 'OPTIONS', 'PUT', 'DELETE'],
     ALLOW_CRED: true,
+  },
+  HEALTH_CHECK: {
+    URL: 'https://jsonplaceholder.typicode.com/posts/1',
+    METHOD: 'GET',
+    PROXY: 'http://http.proxy.fmr.com:8000',
+  },
+  MIMETYPE: {
+    APPLICATION_JSON: 'application/json',
+    MULTIPART_FORM_DATA: 'multipart/form-data',
+  },
+  REGEX: {
+    MULTIPART_CONTENT_TYPE: /^(multipart)[\/\\\-\w]*$/,
+    FILE_NAME: /^[\w]{2,}(.(csv|xls|xlsx|env|mp4))$/,
+    NUMBER: /^[\d]$/,
   },
 };

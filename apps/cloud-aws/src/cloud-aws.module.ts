@@ -6,6 +6,7 @@ import { SharedModule } from './modules/shared/shared.module';
 import { CoreModule } from './modules/core/core.module';
 import { ApiModule } from './modules/api/api.module';
 
+
 @Module({
   imports: [TerminusModule, SharedModule, CoreModule, ApiModule],
   controllers: [CloudAwsController],

@@ -16,16 +16,16 @@ export class CorsInterceptor implements NestInterceptor {
     const hostHeader = request.headers['host'];
     const originHeader = request.headers['origin'] && true ? <string>request.headers['origin'] : null;
     console.log('origin header', originHeader);
-    let allowedOrigin: boolean = false;
+    let allowedOrigin = false;
     if (hostHeader) {
       allowedOrigin = API_AWS_CONST.CORS.WHITELIST.indexOf(hostHeader) != -1;
     } else {
       allowedOrigin = API_AWS_CONST.CORS.WHITELIST.indexOf(originHeader) != -1;
     }
-
+    console.log('allowed origin:', allowedOrigin)
     if (allowedOrigin) {
       // now you have to set the CORS headers in the response
-      let headerObjMap = new Map();
+      const headerObjMap = new Map();
       API_AWS_CONST.CORS.HEADERS.map(item => {
         item = item.toLowerCase();
         if (item.includes('Origin'.toLowerCase())) {
@@ -39,6 +39,7 @@ export class CorsInterceptor implements NestInterceptor {
         }
       });
       response.headers(Object.entries(headerObjMap));
+      return next.handle();
     } else {
       // throw cors error
       // IMP!!!: Reason for throwing the error wiht switchMap is because the error is a manual one
