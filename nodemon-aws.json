@@ -1,0 +1,11 @@
+{
+  "watch": ["apps/cloud-aws/src/config/**", "apps/cloud-aws/src/**"],
+  "exec": "ts-node apps/cloud-aws/src/main.ts",
+  "restartable": "rs",
+  "verbose": false,
+  "ignore": ["apps/cloud-aws/src/**/*.spec.ts","/node_modules/**", "apps/cloud-aws/test/**"],
+  "nodeArgs": [
+    {"NODE_ENV":"development"}
+  ],
+  "ext": "js,ts, jade, tsx, jsx, mjs"
+}

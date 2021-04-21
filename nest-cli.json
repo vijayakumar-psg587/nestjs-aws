@@ -1,4 +1,42 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "apps/nestjs-fastify-video-streaming/src",
+  "monorepo": true,
+  "root": "apps/nestjs-fastify-video-streaming",
+  "compilerOptions": {
+    "tsConfigPath": "apps/nestjs-fastify-video-streaming/tsconfig.app.json"
+  },
+  "projects": {
+    "nestjs-fastify-video-streaming": {
+      "type": "application",
+      "root": "apps/nestjs-fastify-video-streaming",
+      "entryFile": "main",
+      "sourceRoot": "apps/nestjs-fastify-video-streaming/src",
+      "compilerOptions": {
+        "webpack": true,
+        "webpackConfigPath": "webpack.config.js",
+        "tsConfigPath": "apps/nestjs-fastify-video-streaming/tsconfig.app.json"
+      }
+    },
+    "cloud-aws": {
+      "type": "application",
+      "root": "apps/cloud-aws",
+      "entryFile": "main",
+      "sourceRoot": "apps/cloud-aws/src",
+      "compilerOptions": {
+        "webpack": true,
+        "webpackConfigPath": "webpack.config.js",
+        "tsConfigPath": "apps/cloud-aws/tsconfig.app.json"
+      }
+    },
+    "cloud-gcp": {
+      "type": "application",
+      "root": "apps/cloud-gcp",
+      "entryFile": "main",
+      "sourceRoot": "apps/cloud-gcp/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/cloud-gcp/tsconfig.app.json"
+      }
+    }
+  }
 }

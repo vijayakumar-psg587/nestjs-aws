@@ -35,3 +35,6 @@ lerna-debug.log*
 config/
 upload/
 nestjs-fastify-video-streaming.iml
+apps/nestjs-fastify-video-streaming/src/config/
+apps/nestjs-fastify-video-streaming/dist/
+
