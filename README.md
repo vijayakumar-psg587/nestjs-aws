@@ -1,50 +1,39 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+**Example of MonoRepo in Nestjs**
 
+You will find two different applications
 
-## Description
-<h1>Nestjs app with Fastify server utilizing various AWS services </h1>
-<h3>Currently only S3 functionalities have been implemented</h3>
+_Note:_ For both the apps - config folder is necessary - Please create the environment variables that are required for you -
 
+Follow the steps after going into the app that you wanted to create configuration for
 
-## Installation
+Ex of configuration
 
 ```bash
-$ npm install
+- mkdir config
+ - cd config && mkdir development && cd development
+ - vi .env
 ```
 
-## Running the app
+:::no-loc text="APP_HOST=0.0.0.0
+APP_PORT=3002
+APP_ENV_DEV=dev
+APP_CONTEXT_PATH=/file-stream
+APP_VERSION=/v1
+NODE_ENV=dev
+ENABLE_HTTPS_PROXY=false
+PROXY_HOST=http.proxy.fmr.com
+PROXY_PORT=8000
+APP_SERVICE_RETRY_COUNT=2
 
-First make sure to create /find a way to inject app configuration. Currently done via config/ in local
+APP_SWAGGER_TITLE=AWS API
+APP_SWAGGER_DESC=Api to stream videos from aws
+APP_SWAGGER_EMAIL=testemail
+APP_SWAGGER_CONTACT_NAME=testContactName
+APP_SWAGGER_SERVER_URL=https://localhost:3002
+APP_SWAGGER_ENDPOINT=swagger-ui":::
 
+- Nestjs-fastify-video-streaming (which is actually stores medium media files in local)
 
-├── config
+- Cloud-awws (fastify based storage in aws S3)
 
-│   ├── development
-
-│   │   ├── .env
-
-```bash
-# development
-$ npm run start:nodemon:dev
-
-# build
-$ npm run build:webpack:dev
-
-# build & deploy -dev
-$ npm run pm2:start:dev
-
-# build & deploy - prod
-$ npm run pm2:start:prod // make sure that webpack.prod.config.js is available for that
-```
-
-
-## Stay in touch
-
-- Author - [Vijayakumar](www.linkedin.com/in/vijay-kumar-shanmugam)
-- Twitter - [Vijay@handofgod_10](https://twitter.com/handofgod_10)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
+The configurations are available in nestjs-cli.json where specific webpack modules are used for each
